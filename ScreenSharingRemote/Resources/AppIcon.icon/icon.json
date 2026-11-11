@@ -1,0 +1,46 @@
+{
+  "fill": {
+    "automatic-gradient": "extended-srgb:0.42000,0.23000,0.85000,1.00000"
+  },
+  "groups": [
+    {
+      "layers": [
+        {
+          "glass": true,
+          "image-name": "2-cursor.png",
+          "name": "2-cursor"
+        }
+      ],
+      "shadow": {
+        "kind": "neutral",
+        "opacity": 0.8
+      },
+      "specular": false,
+      "translucency": {
+        "enabled": false,
+        "value": 0.3
+      }
+    },
+    {
+      "layers": [
+        {
+          "glass": true,
+          "image-name": "1-touch.png",
+          "name": "1-touch"
+        }
+      ],
+      "shadow": {
+        "kind": "neutral",
+        "opacity": 0.5
+      },
+      "specular": false,
+      "translucency": {
+        "enabled": true,
+        "value": 0.7
+      }
+    }
+  ],
+  "supported-platforms": {
+    "squares": "shared"
+  }
+}

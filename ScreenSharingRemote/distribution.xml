@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<installer-gui-script minSpecVersion="2">
+    <title>Screen Sharing Remote</title>
+    <pkg-ref id="app.screensharingremote.ios"/>
+    <options customize="never" require-scripts="false" hostArchitectures="arm64,x86_64"/>
+    <choices-outline>
+        <line choice="default"/>
+    </choices-outline>
+    <choice id="default" title="Screen Sharing Remote">
+        <pkg-ref id="app.screensharingremote.ios"/>
+    </choice>
+    <pkg-ref id="app.screensharingremote.ios" version="0" onConclusion="none">component.pkg</pkg-ref>
+</installer-gui-script>
