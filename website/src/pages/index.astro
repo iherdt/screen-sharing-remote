@@ -1,0 +1,227 @@
+---
+import Layout from "../layouts/Layout.astro";
+
+const APP_STORE_URL = "#"; // set when the App Store listing is live
+const SOURCE_URL = "https://github.com/iherdt/screen-sharing-remote";
+
+const features = [
+  {
+    icon: "👆",
+    title: "Taps That Land",
+    body: "The pointer jumps to exactly where you touch, then clicks there. No trackpad shuffling to reach a button.",
+  },
+  {
+    icon: "⚡",
+    title: "No Dropped Points",
+    body: "Every intermediate touch sample is sent to your Mac, so fast strokes and quick gestures stay precise.",
+  },
+  {
+    icon: "🖥️",
+    title: "Predicted Cursor",
+    body: "The cursor is drawn at the predicted touch position, about a frame ahead of your finger. It never feels behind.",
+  },
+  {
+    icon: "🍎",
+    title: "Apple's Own Protocol",
+    body: "Connects over Apple Screen Sharing, the same high-performance protocol your Macs already speak.",
+  },
+  {
+    icon: "⌨️",
+    title: "Full Keyboard and Gestures",
+    body: "Type, scroll, pinch, rotate, and drag. Trackpad mode is there when you want fine control.",
+  },
+  {
+    icon: "🔒",
+    title: "Private by Design",
+    body: "No account, no analytics, no relay server. Your iPhone talks directly to your Mac on your network.",
+  },
+];
+---
+
+<Layout>
+  <header class="wrap hero">
+    <img class="icon" src="/app-icon.png" alt="Screen Sharing Remote app icon" width="96" height="96" />
+    <h1>Your Mac, on your iPhone,<br /><span class="grad">under your finger.</span></h1>
+    <p class="sub">
+      An iPhone client for Apple Screen Sharing built around one feeling: touch that lands.
+      See your Mac's screen and drive it from the touchscreen.
+    </p>
+    <div class="cta-row">
+      <a class="btn btn-violet" href={APP_STORE_URL}>Download on the App Store</a>
+      <a class="btn btn-ghost" href={SOURCE_URL}>Read the source</a>
+    </div>
+    <p class="hint">$0.99 on the App Store. Open source under GPLv3.</p>
+  </header>
+
+  <section class="wrap features" id="features">
+    <h2>Remote control that feels native</h2>
+    <p class="lead">
+      Remote desktops usually feel mushy under a finger. Screen Sharing Remote exists to fix
+      exactly that.
+    </p>
+    <div class="grid">
+      {
+        features.map((f) => (
+          <div class="card">
+            <div class="emoji">{f.icon}</div>
+            <h3>{f.title}</h3>
+            <p>{f.body}</p>
+          </div>
+        ))
+      }
+    </div>
+  </section>
+
+  <section class="wrap final">
+    <h2>Reach your Mac.</h2>
+    <p class="lead">One dollar on the App Store. The full source is yours either way.</p>
+    <div class="cta-row">
+      <a class="btn btn-violet" href={APP_STORE_URL}>View on the App Store</a>
+      <a class="btn btn-ghost" href={SOURCE_URL}>Source on GitHub</a>
+    </div>
+  </section>
+
+  <footer class="wrap">
+    <nav>
+      <a href="/privacy">Privacy Policy</a>
+      <a href="/terms">Terms of Use</a>
+      <a href={SOURCE_URL}>Source Code (GPLv3)</a>
+    </nav>
+    <p>
+      Screen Sharing Remote is an independent app and is not affiliated with or endorsed by
+      Apple Inc. Mac and iPhone are trademarks of Apple Inc. © Ilja Herdt
+    </p>
+  </footer>
+</Layout>
+
+<style>
+  .wrap {
+    max-width: 980px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+
+  /* Hero */
+  .hero {
+    padding: 84px 20px 48px;
+    text-align: center;
+    position: relative;
+  }
+  .hero::before {
+    content: "";
+    position: absolute;
+    inset: -40% -20% auto;
+    height: 480px;
+    background: radial-gradient(600px 300px at 50% 20%, rgba(139, 92, 246, 0.22), transparent);
+    pointer-events: none;
+  }
+  .icon {
+    border-radius: 22px;
+    margin-bottom: 20px;
+  }
+  h1 {
+    font-size: clamp(2rem, 5vw, 3.2rem);
+    line-height: 1.12;
+    letter-spacing: -0.02em;
+  }
+  .grad {
+    background: linear-gradient(120deg, var(--violet) 0%, var(--ice) 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+  .sub {
+    max-width: 560px;
+    margin: 18px auto 26px;
+    color: var(--text-2);
+    font-size: 1.08rem;
+  }
+  .cta-row {
+    display: flex;
+    gap: 12px;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+  .btn {
+    display: inline-block;
+    padding: 12px 22px;
+    border-radius: 999px;
+    font-weight: 600;
+  }
+  .btn-violet {
+    background: linear-gradient(120deg, var(--violet), var(--violet-deep));
+    color: #fff;
+  }
+  .btn-ghost {
+    border: 1px solid var(--card-border);
+    color: var(--text);
+  }
+  .hint {
+    margin-top: 14px;
+    color: var(--text-3);
+    font-size: 0.9rem;
+  }
+
+  /* Features */
+  .features {
+    padding: 48px 20px;
+    text-align: center;
+  }
+  .features h2 {
+    font-size: clamp(1.5rem, 3.4vw, 2.1rem);
+  }
+  .lead {
+    color: var(--text-2);
+    max-width: 560px;
+    margin: 10px auto 30px;
+  }
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 14px;
+    text-align: left;
+  }
+  .card {
+    background: var(--card);
+    border: 1px solid var(--card-border);
+    border-radius: var(--radius);
+    padding: 20px;
+  }
+  .emoji {
+    font-size: 1.6rem;
+    margin-bottom: 8px;
+  }
+  .card h3 {
+    font-size: 1.02rem;
+    margin-bottom: 6px;
+  }
+  .card p {
+    color: var(--text-2);
+    font-size: 0.95rem;
+  }
+
+  /* Final CTA */
+  .final {
+    padding: 56px 20px 64px;
+    text-align: center;
+  }
+  .final h2 {
+    font-size: clamp(1.5rem, 3.4vw, 2.1rem);
+  }
+
+  /* Footer */
+  footer {
+    border-top: 1px solid var(--card-border);
+    padding: 26px 20px 44px;
+    color: var(--text-3);
+    font-size: 0.88rem;
+    text-align: center;
+  }
+  footer nav {
+    display: flex;
+    gap: 18px;
+    justify-content: center;
+    margin-bottom: 12px;
+    flex-wrap: wrap;
+  }
+</style>

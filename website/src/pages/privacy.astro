@@ -1,0 +1,76 @@
+---
+import Layout from "../layouts/Layout.astro";
+---
+
+<Layout
+  title="Privacy Policy — Screen Sharing Remote"
+  description="Screen Sharing Remote collects no data. No account, no analytics, no servers."
+>
+  <main class="wrap">
+    <h1>Privacy Policy</h1>
+    <p class="updated">Last updated: November 10, 2026</p>
+
+    <h2>The short version</h2>
+    <p>
+      Screen Sharing Remote collects nothing. There is no account, no analytics, no advertising,
+      and no server operated by us.
+    </p>
+
+    <h2>What the app does with data</h2>
+    <p>
+      The app connects your iPhone directly to a Mac you choose, over Apple's Screen Sharing
+      protocol, on your own network. Screen contents, input events, and credentials travel
+      between your devices only. We never see them.
+    </p>
+    <p>
+      Connection settings, such as saved computers and session preferences, are stored on your
+      device. If you delete the app, they are gone.
+    </p>
+
+    <h2>Permissions</h2>
+    <p>
+      The app asks for local network access to find and reach your Macs. It uses that access
+      only to connect to the computers you pick.
+    </p>
+
+    <h2>Third parties</h2>
+    <p>
+      There are none. The app contains no third-party SDKs, trackers, or analytics frameworks.
+    </p>
+
+    <h2>Contact</h2>
+    <p>
+      Questions? Open an issue on
+      <a href="https://github.com/iherdt/screen-sharing-remote">GitHub</a>.
+    </p>
+
+    <p class="back"><a href="/">← Back to Screen Sharing Remote</a></p>
+  </main>
+</Layout>
+
+<style>
+  .wrap {
+    max-width: 680px;
+    margin: 0 auto;
+    padding: 64px 20px 80px;
+  }
+  h1 {
+    font-size: 2rem;
+    margin-bottom: 4px;
+  }
+  .updated {
+    color: var(--text-3);
+    margin-bottom: 28px;
+  }
+  h2 {
+    font-size: 1.15rem;
+    margin: 26px 0 8px;
+  }
+  p {
+    color: var(--text-2);
+    margin-bottom: 10px;
+  }
+  .back {
+    margin-top: 36px;
+  }
+</style>

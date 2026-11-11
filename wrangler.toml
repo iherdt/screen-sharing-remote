@@ -1,0 +1,12 @@
+# Cloudflare Pages (repo root)
+#
+# Dashboard settings when Root directory is empty / repo root:
+#   Build command:  bun run website:build
+#   Deploy command: npx wrangler pages deploy
+#   (do NOT use `npx wrangler deploy`, that is for Workers)
+#
+# pages_build_output_dir is relative to this file (repo root).
+
+name = "screensharingremote"
+compatibility_date = "2026-08-01"
+pages_build_output_dir = "website/dist"
