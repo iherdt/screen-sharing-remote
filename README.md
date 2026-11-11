@@ -8,7 +8,7 @@ Available on the iOS App Store for $0.99.
 
 Screen Sharing Remote focuses on interaction quality in direct-touch mode:
 
-* **Offset cursor.** The pointer rides 36 points above your fingertip, so the target you are pointing at stays visible instead of hiding under your finger. Taps land where the cursor points, on touch down, move, and lift.
+* **Exact taps.** Clicks land precisely where your finger touches, on touch down, move, and lift. An optional offset (`touchOffsetPoints`) can float the pointer above the fingertip instead; the default is 0 for exact 1:1 mapping.
 * **No dropped points.** Every real intermediate touch sample is sent to the remote Mac (via coalesced touches), so fast strokes stay precise.
 * **Predicted cursor.** The local cursor is drawn at UIKit's predicted touch position, about one frame ahead of your finger. Predictions are display-only and never reach the server; the next real sample always corrects them.
 

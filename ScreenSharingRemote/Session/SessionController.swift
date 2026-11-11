@@ -1794,6 +1794,15 @@ final class SessionController: Identifiable {
         sendPointer(buttons: pointerButtons)
     }
 
+    /// Sends the current pointer position to the server without any button,
+    /// so the remote cursor visibly jumps to the touch point before the
+    /// click that follows. `moveTouch` alone does not send while no button
+    /// is pressed.
+    func commitTouchPosition() {
+        guard isControlling else { return }
+        sendPointer(buttons: pointerButtons)
+    }
+
     /// Moves only the locally drawn cursor, without changing the pointer
     /// position sent to the server. Used to render UIKit's predicted touch
     /// positions so the cursor leads the finger; the next real touch sample

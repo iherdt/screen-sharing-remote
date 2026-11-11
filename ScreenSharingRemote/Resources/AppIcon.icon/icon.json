@@ -25,8 +25,8 @@
       "layers": [
         {
           "glass": true,
-          "image-name": "1-touch.png",
-          "name": "1-touch"
+          "image-name": "1-mini.png",
+          "name": "1-mini"
         }
       ],
       "shadow": {

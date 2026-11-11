@@ -24,12 +24,14 @@ final class ScreenInput: NSObject, UIGestureRecognizerDelegate, UIPointerInterac
     // finger instead:
     //
     // * touchOffsetPoints lifts the pointer above the fingertip so the
-    //   target stays visible. Set to 0 to restore the exact 1:1 mapping.
+    //   target stays visible. 0 keeps the exact 1:1 mapping: clicks land
+    //   precisely where the finger touches. Raise (e.g. 36) to float the
+    //   cursor above the fingertip instead.
     // * touchPredictionEnabled draws the local cursor at UIKit's
     //   predicted position, about one frame ahead of the finger.
     //   Predictions are display-only and are never sent to the server;
     //   the next real touch sample always corrects the cursor.
-    private static let touchOffsetPoints: CGFloat = 36
+    private static let touchOffsetPoints: CGFloat = 0
     private static let touchPredictionEnabled = true
 
     private unowned let view: RemoteScreenUIView
@@ -465,7 +467,14 @@ final class ScreenInput: NSObject, UIGestureRecognizerDelegate, UIPointerInterac
         switch finger.phase {
         case .pending:
             guard let time, finger.isTap(endedAt: time), controller.isControlling else { break }
-            controller.movePointer(to: finger.startPointer)
+            // A tap inside the remote image clicks at the tapped point, so the
+            // pointer jumps to the finger. Taps outside the image (letterbox)
+            // keep the classic trackpad behavior: click where the pointer is.
+            if view.imageRect.contains(finger.start) {
+                controller.movePointer(to: touchPoint(for: finger.start))
+            } else {
+                controller.movePointer(to: finger.startPointer)
+            }
             controller.click(.primary)
         case .pointing:
             break
@@ -514,6 +523,7 @@ final class ScreenInput: NSObject, UIGestureRecognizerDelegate, UIPointerInterac
         touchFinger = touch
         touchPressed = true
         controller.moveTouch(to: touchPoint(for: location))
+        controller.commitTouchPosition()
         controller.press(.primary)
     }
 

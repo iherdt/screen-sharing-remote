@@ -428,14 +428,14 @@
 				"CODE_SIGN_ENTITLEMENTS[sdk=macosx*]" = ScreenSharingRemote/ScreenSharingRemote.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = P8XK3KHB48;
+				DEVELOPMENT_TEAM = W6UZ377VJR;
 				"ENABLE_HARDENED_RUNTIME[sdk=macosx*]" = YES;
 				ENABLE_PREVIEWS = YES;
 				"ENABLE_RESOURCE_ACCESS_AUDIO_INPUT[sdk=macosx*]" = YES;
 				"EXCLUDED_SOURCE_FILE_NAMES[sdk=macosx*]" = "$(SRCROOT)/ScreenSharingRemote/Server/*";
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "$(APP_INFOPLIST_FILE)";
-				INFOPLIST_KEY_CFBundleDisplayName = "Screen Sharing Remote";
+				INFOPLIST_KEY_CFBundleDisplayName = "Screen Remote";
 				INFOPLIST_KEY_ITSAppUsesNonExemptEncryption = NO;
 				"INFOPLIST_KEY_LSApplicationCategoryType[sdk=macosx*]" = "public.app-category.utilities";
 				INFOPLIST_KEY_LSSupportsOpeningDocumentsInPlace = YES;
@@ -477,7 +477,7 @@
 				"CODE_SIGN_ENTITLEMENTS[sdk=macosx*]" = ScreenSharingRemote/ScreenSharingRemote.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = P8XK3KHB48;
+				DEVELOPMENT_TEAM = W6UZ377VJR;
 				"ENABLE_HARDENED_RUNTIME[sdk=macosx*]" = YES;
 				ENABLE_PREVIEWS = YES;
 				"ENABLE_RESOURCE_ACCESS_AUDIO_INPUT[sdk=macosx*]" = YES;
@@ -491,7 +491,7 @@
 				);
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "$(APP_INFOPLIST_FILE)";
-				INFOPLIST_KEY_CFBundleDisplayName = "Screen Sharing Remote";
+				INFOPLIST_KEY_CFBundleDisplayName = "Screen Remote";
 				INFOPLIST_KEY_ITSAppUsesNonExemptEncryption = NO;
 				"INFOPLIST_KEY_LSApplicationCategoryType[sdk=macosx*]" = "public.app-category.utilities";
 				INFOPLIST_KEY_LSSupportsOpeningDocumentsInPlace = YES;
@@ -528,7 +528,7 @@
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = P8XK3KHB48;
+				DEVELOPMENT_TEAM = W6UZ377VJR;
 				GENERATE_INFOPLIST_FILE = YES;
 				MARKETING_VERSION = 0.1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = app.screensharingremote.ios.uitests;
@@ -549,7 +549,7 @@
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = P8XK3KHB48;
+				DEVELOPMENT_TEAM = W6UZ377VJR;
 				GENERATE_INFOPLIST_FILE = YES;
 				MARKETING_VERSION = 0.1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = app.screensharingremote.ios.uitests;
